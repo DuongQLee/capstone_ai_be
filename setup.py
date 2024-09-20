@@ -1,5 +1,5 @@
-from google_drive_downloader import GoogleDriveDownloader as gdd
-
-gdd.download_file_from_google_drive(file_id='1bRKFQLr7AWd1w3uK8ilqIxzeJEiFCb06',
-                                    dest_path='./models/segmentation_model.pt',
-                                    unzip=True)
+import gdown
+gdown.download(
+    f"https://drive.google.com/uc?export=download&confirm=pbef&id={"14-IRbqyojhmiNoY7dH6aWGwDad6Z56af"}",
+    "models/segmentation_model.pt"
+)
