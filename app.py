@@ -64,7 +64,7 @@ def get_json_prediction_result(input_image: Image):
         imgsz=640,
         source=input_image,
         conf=0.25,
-        save=False
+        save=True
     )
     result = parse_predict_result_to_json(predict_result=predict_result_)
     return result
