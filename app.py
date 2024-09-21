@@ -49,11 +49,11 @@ def get_bytes_from_image(image: Image) -> bytes:
 def parse_predict_result_to_json(predict_result: Results):
     res = []
 
-    for index, predicted_class_index in enumerate(predict_result[0].obb.cls):
+    for index, predicted_class_index in enumerate(predict_result[0].boxes.cls):
         new_obj = {
             "class": yolo_model.model.names[int(predicted_class_index)],
-            "boundingBox":  predict_result[0].obb.xyxyxyxyn[index].tolist(),
-            "conf": predict_result[0].obb.conf[index].tolist()
+            "boundingBox":  predict_result[0].boxes.xywhn[index].tolist(),
+            "conf": predict_result[0].boxes.conf[index].tolist()
         }
         res.append(new_obj)
 
